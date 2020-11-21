@@ -1,0 +1,90 @@
+[debug] [2020-11-21T16:21:51.496Z] ----------------------------------------------------------------------
+[debug] [2020-11-21T16:21:51.497Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js deploy --project cv-upload-367d4
+[debug] [2020-11-21T16:21:51.497Z] CLI Version:   8.11.2
+[debug] [2020-11-21T16:21:51.497Z] Platform:      win32
+[debug] [2020-11-21T16:21:51.497Z] Node Version:  v12.14.0
+[debug] [2020-11-21T16:21:51.498Z] Time:          Sat Nov 21 2020 17:21:51 GMT+0100 (West Africa Standard Time)
+[debug] [2020-11-21T16:21:51.498Z] ----------------------------------------------------------------------
+[debug] [2020-11-21T16:21:51.498Z] 
+[debug] [2020-11-21T16:21:51.504Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-21T16:21:51.504Z] > authorizing via signed-in user
+[debug] [2020-11-21T16:21:51.504Z] [iam] checking project cv-upload-367d4 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-11-21T16:21:51.506Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/cv-upload-367d4:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-11-21T16:21:52.516Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 21 Nov 2020 16:21:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=623","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-21T16:21:52.517Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/cv-upload-367d4/serviceAccounts/cv-upload-367d4@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-11-21T16:21:53.602Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 21 Nov 2020 16:21:52 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-21T16:21:53.603Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/cv-upload-367d4  
+ 
+[debug] [2020-11-21T16:21:54.190Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 21 Nov 2020 16:21:53 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-21T16:21:54.193Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received type undefined
+    at validateString (internal/validators.js:112:11)
+    at Object.join (path.js:375:7)
+    at Object.checkFunctionsSDKVersion [as fn] (C:\ProgramData\nvm\v12.14.0\node_modules\firebase-tools\lib\checkFirebaseSDKVersion.js:34:28)
+    at Command.<anonymous> (C:\ProgramData\nvm\v12.14.0\node_modules\firebase-tools\lib\command.js:164:30)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\ProgramData\nvm\v12.14.0\node_modules\firebase-tools\lib\command.js:5:58)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-11-21T16:22:11.916Z] ----------------------------------------------------------------------
+[debug] [2020-11-21T16:22:11.917Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-11-21T16:22:11.917Z] CLI Version:   8.11.2
+[debug] [2020-11-21T16:22:11.918Z] Platform:      win32
+[debug] [2020-11-21T16:22:11.918Z] Node Version:  v12.14.0
+[debug] [2020-11-21T16:22:11.918Z] Time:          Sat Nov 21 2020 17:22:11 GMT+0100 (West Africa Standard Time)
+[debug] [2020-11-21T16:22:11.918Z] ----------------------------------------------------------------------
+[debug] [2020-11-21T16:22:11.918Z] 
+[debug] [2020-11-21T16:22:11.923Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-21T16:22:11.924Z] > authorizing via signed-in user
+[debug] [2020-11-21T16:22:11.924Z] [iam] checking project cv-upload-367d4 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-11-21T16:22:11.926Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/cv-upload-367d4:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-11-21T16:22:12.796Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 21 Nov 2020 16:22:12 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=627","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-21T16:22:12.797Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/cv-upload-367d4/serviceAccounts/cv-upload-367d4@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-11-21T16:22:13.653Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 21 Nov 2020 16:22:13 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-21T16:22:13.654Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/cv-upload-367d4  
+ 
+[debug] [2020-11-21T16:22:13.957Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 21 Nov 2020 16:22:13 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-21T16:22:13.958Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received type undefined
+    at validateString (internal/validators.js:112:11)
+    at Object.join (path.js:375:7)
+    at Object.checkFunctionsSDKVersion [as fn] (C:\ProgramData\nvm\v12.14.0\node_modules\firebase-tools\lib\checkFirebaseSDKVersion.js:34:28)
+    at Command.<anonymous> (C:\ProgramData\nvm\v12.14.0\node_modules\firebase-tools\lib\command.js:164:30)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\ProgramData\nvm\v12.14.0\node_modules\firebase-tools\lib\command.js:5:58)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-11-21T17:33:58.754Z] ----------------------------------------------------------------------
+[debug] [2020-11-21T17:33:58.755Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js deploy --project cv-upload-367d4
+[debug] [2020-11-21T17:33:58.756Z] CLI Version:   8.11.2
+[debug] [2020-11-21T17:33:58.756Z] Platform:      win32
+[debug] [2020-11-21T17:33:58.756Z] Node Version:  v12.14.0
+[debug] [2020-11-21T17:33:58.756Z] Time:          Sat Nov 21 2020 18:33:58 GMT+0100 (West Africa Standard Time)
+[debug] [2020-11-21T17:33:58.756Z] ----------------------------------------------------------------------
+[debug] [2020-11-21T17:33:58.756Z] 
+[debug] [2020-11-21T17:33:58.761Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-21T17:33:58.762Z] > authorizing via signed-in user
+[debug] [2020-11-21T17:33:58.762Z] [iam] checking project cv-upload-367d4 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-11-21T17:33:58.764Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/cv-upload-367d4:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-11-21T17:33:59.770Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 21 Nov 2020 17:33:59 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=696","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-21T17:33:59.771Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/cv-upload-367d4/serviceAccounts/cv-upload-367d4@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-11-21T17:34:00.678Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 21 Nov 2020 17:34:00 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-21T17:34:00.679Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/cv-upload-367d4  
+ 
+[debug] [2020-11-21T17:34:01.119Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 21 Nov 2020 17:34:00 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-21T17:34:01.121Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received type undefined
+    at validateString (internal/validators.js:112:11)
+    at Object.join (path.js:375:7)
+    at Object.checkFunctionsSDKVersion [as fn] (C:\ProgramData\nvm\v12.14.0\node_modules\firebase-tools\lib\checkFirebaseSDKVersion.js:34:28)
+    at Command.<anonymous> (C:\ProgramData\nvm\v12.14.0\node_modules\firebase-tools\lib\command.js:164:30)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\ProgramData\nvm\v12.14.0\node_modules\firebase-tools\lib\command.js:5:58)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[error] 
+[error] Error: An unexpected error has occurred.

@@ -1,0 +1,45 @@
+<div fxLayout="column" >
+<form  fxLayout="row" [formGroup]="basicForm"  fxLayoutAlign="start center"  >
+    <div fxLayout="column" class="user-form-content-container" fxLayoutGap="20px" >
+        <mat-form-field [hideRequiredMarker]="true" hideRequiredMarker>
+            <mat-label>First name</mat-label>
+            <input matInput formControlName="first_name">
+            <mat-error *ngIf="basicForm.controls['first_name'].errors?.required">First Name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field [hideRequiredMarker]="'true'" >
+            <mat-label> Last Name</mat-label>
+            <input matInput formControlName="last_name">
+            <mat-error *ngIf="basicForm.controls['last_name'].errors?.required">Last Name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+        <mat-label>Birthdate </mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="birth_day" placeholder="dd/mm/yyyy"  (dateInput)="addEvent('input', $event)"
+            (dateChange)="addEvent('change', $event)">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error>
+                  <p *ngIf="basicForm.controls['birth_day'].errors?.matDatepickerParse">birthdate date is not valid </p>
+                  <p *ngIf="!basicForm.controls['birth_day'].errors?.matDatepickerParse && basicForm.controls['birth_day'].errors?.required">birthdate is required </p>
+                </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Select University</mat-label>
+            <mat-select formControlName="university">
+              <mat-option *ngFor="let food of foods"   [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="basicForm.controls['university'].errors?.required">Please Choose a university</mat-error>
+          </mat-form-field>
+
+          <div fxLayoutAlign="end end" fxFlexOffset="15px">
+            <button mat-flat-button  mat-primary [disabled]="!basicForm.valid" style="width: 100px;"  (click)="saveBasicInformation()" matStepperNext color="primary">
+              Next
+            </button>
+          </div>
+    </div>
+  </form>
+</div>

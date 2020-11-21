@@ -1,0 +1,15 @@
+@import '../../styles.scss';
+
+
+
+.card-container {
+  position:absolute; background-color: white;
+
+   top: calc(50% - 300px); width: 400px;   height: 500px;  padding-top: 5em;
+}
+
+  .curved-div {
+    background: mat-color( $app-primary);
+
+  }
+

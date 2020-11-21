@@ -1,0 +1,41 @@
+  <div mat-dialog-title style="position: relative; margin:0px;">
+    <div style="font-style: italic;">Logo Here</div>
+    <div style="font-size: 12px; position: absolute;  top:22px; left: 6px;">User Registration </div>
+  </div>
+  <div mat-dialog-content>
+    <mat-vertical-stepper  [linear]="true" #stepper style="padding: 0px; ">
+      <!--User Registration Basic Information Step-->
+      <mat-step [stepControl]="basicInfoComponent.basicForm"
+        [errorMessage]="'Validation Error'" >
+          <ng-template matStepLabel >Basic Information </ng-template>
+           <app-basic-info #bsinfo (onSave)="saveBasicInformationData($event)"></app-basic-info>
+      </mat-step>
+      <!--User Registration Credential Information Step-->
+        <mat-step [stepControl]="credentialComponent.credentialForm"
+         [errorMessage]="'Validation Error'" >
+          <ng-template matStepLabel >Credential Information </ng-template>
+           <app-credential  (onSave)="saveCredentialInformation($event)" [emailExist]="emailExist"></app-credential>
+      </mat-step>
+      <!--User Registration Email Verification Step-->
+      <mat-step [completed]="emailVerificationComponent.emailVerified">
+        <ng-template matStepLabel>Email Verification</ng-template>
+        <app-email-verification  (goNext)="goForward($event)"  (goBack)="goBack($event)" [credential]="credential"></app-email-verification>
+      </mat-step>
+      <!--User Registration CA Upload Step-->
+      <mat-step  [completed]="caComponent?.isUploaded && caComponent?.signedIn" >
+        <ng-template matStepLabel >  CA Upload </ng-template>
+        <app-common-application-uploader  [credential]="credential" [requestModel]="basicInfoData" ></app-common-application-uploader>
+      </mat-step>
+      <!--User Registration Additional Information Step-->
+      <mat-step>
+        <ng-template matStepLabel> Additional Information </ng-template>
+            <app-additional-information></app-additional-information>
+      </mat-step>
+      <!--User Registration Confirmation Step-->
+      <mat-step>
+        <ng-template matStepLabel> Confirm </ng-template>
+          <app-confirmation></app-confirmation>
+      </mat-step>
+    </mat-vertical-stepper>
+  </div>
+

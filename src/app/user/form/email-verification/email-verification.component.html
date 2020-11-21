@@ -1,0 +1,41 @@
+<div fxLayout="column" fxLayoutGap="20px">
+    <ng-template matStepLabel>Email Verification</ng-template>
+    <div fxLayout="row">
+      <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="50px" class="user-form-content-container" >
+            <ng-container [ngSwitch]="localState.state">
+              <h4 fxFlexAlign="start" *ngSwitchCase="State.PENDING" >Check Your Email For A Verification Code</h4>
+                    <ng-container *ngSwitchCase="State.PROCESSING">
+                      <h3> {{!startVerification?'Processing Your Information':'Email Verification...'}} </h3>
+                      <span style=" width: 90%;">
+                        <mat-progress-bar mode="buffer"></mat-progress-bar>
+                      </span>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="State.PENDING" >
+                      <mat-form-field  style="width: 60%; padding-left: 20px;">
+                        <mat-label>Code</mat-label>
+                        <input matInput   [(ngModel)]="verificationCode">
+                          <mat-hint  *ngIf="invalidCode" class="customError" >Verification code is invalid</mat-hint>
+
+                     </mat-form-field>
+                     <div fxLayout="row" fxLayoutAlign="center end"  fxLayoutGap="15px" fxFlexAlign="stretch">
+                        <button mat-button   (click)="requestVerificationCode()" >Resend Code</button>
+                        <button mat-flat-button  mat-primary  color="primary" (click)="verifyEmail()">Verify</button>
+                      </div>
+                    </ng-container>
+                    <ng-container  *ngSwitchCase="State.SUCCESS">
+                     <div  fxFlex fxLayout="column"  fxLayoutAlign="space-around start" >
+                        <h3> Email Verification Is Completed !</h3>
+                      <div class="text-center">
+                          <button mat-flat-button  mat-primary  color="primary" matStepperNext  > Next</button>
+                      </div>
+                     </div>
+                    </ng-container >
+            </ng-container>
+      </div>
+
+    </div>
+  </div>
+
+
+
+

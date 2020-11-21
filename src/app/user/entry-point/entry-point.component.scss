@@ -1,0 +1,11 @@
+@import '../../../styles.scss';
+
+:host {
+    height: 100%;
+}
+
+.curved-div {
+  background: mat-color( $app-primary);
+
+}
+

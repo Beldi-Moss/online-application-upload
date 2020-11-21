@@ -1,0 +1,51 @@
+<div   fxLayout="column" fxLayoutGap="20px">
+    <div fxLayout="row">
+      <div fxLayout="column" fxLayoutGap="60px"  class="user-form-content-container">
+        <h3 fxFlexAlign="start"  >Upload Your Application</h3>
+            <ng-container *ngIf="!isUploaded; else success">
+                    <form #heroForm="ngForm">
+                        <div fxFlexFill fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px" >
+                              <div>
+                                <button mat-flat-button color="secondary"
+                                  type="button" (click)="pdfInput.click();">
+                                  <mat-icon [color]="'primary'">attach_file</mat-icon>&nbsp;<span id="sfb"><b> Choose Your CA </b></span></button>
+                                <input contenteditable="true" class="form-control" id="pdf" accept="application/pdf" required (change)="onImageChangeFromFile($event)"
+                                [(ngModel)]="rawData" name="pdf" #pdf="ngModel" #pdfInput hidden="true" type="file">
+                              </div>
+                              <div fxLayout="column" fxLayoutAlign="center center">
+                              <ng-container *ngIf="!isUploading; else loading">
+                                  <button mat-raised-button  mat-primary type="button" color="primary" [disabled]="!pdf.valid" (click)="upload()">
+                                    <mat-icon > cloud_upload</mat-icon> Upload
+                                  </button>
+                                  <div style="padding: 5px;"> <mat-error *ngIf="uploadError">{{errorMessage}}</mat-error>  </div>
+                              </ng-container>
+                                <ng-template #loading>
+                                  <button mat-raised-button  mat-primary type="button" color="accent" [disabled]="isUploaded" (click)="cancelUpload()">
+                                    Cancel
+                                  </button>
+                                    <br>
+                                    <mat-spinner [diameter]="30"></mat-spinner>
+                                    <br>
+                                    <span  *ngIf="(percentage | async) as percent"  class="uploadHint">
+                                      {{percent?.toFixed(0)}}%
+                                    </span>
+                                </ng-template>
+
+                              </div>
+                        </div>
+                      </form>
+            </ng-container>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <ng-template #success>
+    <p> Your Application has been Uploaded! </p>
+    <div class="text-center">
+        <button mat-flat-button  mat-primary  color="primary" matStepperNext  >Next</button>
+    </div>
+  </ng-template>

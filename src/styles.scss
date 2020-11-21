@@ -1,0 +1,165 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+$md-pr: (
+    50 : #fef6ed,
+    100 : #fce8d3,
+    200 : #fbd9b5,
+    300 : #f9c997,
+    400 : #f7be81,
+    500 : #f6b26b,
+    600 : #f5ab63,
+    700 : #f3a258,
+    800 : #f2994e,
+    900 : #ef8a3c,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffe7d5,
+    A700 : #ffd8bc,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+$md-accent: (
+    50 : #e1e1e1,
+    100 : #b3b3b3,
+    200 : #818181,
+    300 : #4e4e4e,
+    400 : #282828,
+    500 : #020202,
+    600 : #020202,
+    700 : #010101,
+    800 : #010101,
+    900 : #010101,
+    A100 : #a6a6a6,
+    A200 : #8c8c8c,
+    A400 : #737373,
+    A700 : #666666,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+ $app-primary: mat-palette($md-pr);
+$app-accent: mat-palette($md-accent, 300, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$app-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($app-theme);
+
+.mat-primary[color="primary"]{
+    color: white;
+}
+
+.mat-step-icon-content{
+  color: white;
+}
+.mat-accent[color="accent"]{
+  color: white;
+}
+.customBackDrop {
+  background-color: rgba(0, 0, 0, 0.233);
+
+}
+
+.customError {
+  color: red !important;
+}
+/* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+html, body { height: 100%; }
+body { margin: 0; padding: 0; box-sizing: border-box; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+
+  .user-form-content-container {
+
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    height: 400px;
+    width:900px;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 7px;
+}
+::-webkit-scrollbar-button {
+  width: 10px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c0c0c0;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #c0c0c0;
+}
+::-webkit-scrollbar-track {
+  background: #7c7c7c;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #818181;
+}
+::-webkit-scrollbar-track:active {
+  background: #797979;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
